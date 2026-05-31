@@ -24,7 +24,9 @@
     color: var(--ink);
 }
 
-header[data-testid="stHeader"] {
+header,
+header[data-testid="stHeader"],
+[data-testid="stHeader"] {
     display: none !important;
     height: 0;
     visibility: hidden;
@@ -33,17 +35,42 @@ header[data-testid="stHeader"] {
 
 #MainMenu,
 footer,
+button[kind="header"],
 div[data-testid="stToolbar"],
+div[data-testid="stToolbarActions"],
 div[data-testid="stDecoration"],
 div[data-testid="stStatusWidget"],
 div[data-testid="stDeployButton"],
+div[data-testid="stAppDeployButton"],
+div[data-testid="stBaseButton-headerNoPadding"],
 .stDeployButton,
 button[title="Deploy this app"],
 button[aria-label="Deploy this app"],
-a[href*="streamlit.io/cloud"] {
+[data-testid*="Deploy"],
+[aria-label*="Deploy"],
+a[href*="streamlit.io"],
+a[href*="streamlit.io/cloud"],
+a[href*="share.streamlit.io"] {
     display: none !important;
     visibility: hidden;
     height: 0;
+}
+
+div[class*="viewerBadge"],
+div[class*="ViewerBadge"],
+div[class*="stActionButton"],
+div[class*="ActionButton"],
+div[data-testid*="viewerBadge"],
+div[data-testid*="stActionButton"],
+iframe[title*="Streamlit"],
+iframe[src*="streamlit.io"],
+iframe[src*="streamlit.app"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    height: 0 !important;
+    width: 0 !important;
 }
 
 .block-container {
@@ -52,13 +79,20 @@ a[href*="streamlit.io/cloud"] {
     padding-bottom: 3rem;
 }
 
+section[data-testid="stSidebar"],
 div[data-testid="stSidebar"] {
-    background: #FBFCF8;
+    background:
+        radial-gradient(circle at top left, rgba(47, 125, 74, 0.14), transparent 19rem),
+        linear-gradient(180deg, #EAF5EC 0%, #F4FAF2 48%, #EEF7EE 100%);
     border-right: 1px solid var(--line);
 }
 
-div[data-testid="stSidebar"] > div {
+section[data-testid="stSidebar"] > div,
+div[data-testid="stSidebar"] > div,
+div[data-testid="stSidebarContent"] {
     padding-top: 1.4rem;
+    background:
+        linear-gradient(180deg, rgba(234, 245, 236, 0.88), rgba(248, 252, 247, 0.82));
 }
 
 section[data-testid="stSidebar"] h2,
@@ -74,15 +108,15 @@ section[data-testid="stSidebar"] label {
 section[data-testid="stSidebar"] [data-baseweb="select"] > div,
 section[data-testid="stSidebar"] input {
     border-radius: 10px;
-    border-color: var(--line);
-    background-color: #FFFFFF;
+    border-color: #CFE2D0;
+    background-color: rgba(255, 255, 255, 0.92);
 }
 
 section[data-testid="stSidebar"] [data-testid="stExpander"] {
-    border: 1px solid var(--line);
+    border: 1px solid #C7DCC8;
     border-radius: 12px;
-    background: #FFFFFF;
-    box-shadow: 0 6px 18px rgba(31, 94, 59, 0.04);
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 8px 22px rgba(31, 94, 59, 0.07);
 }
 
 div[data-testid="stSlider"] [data-baseweb="slider"] div[role="slider"] {
@@ -93,6 +127,15 @@ div[data-testid="stSlider"] [data-baseweb="slider"] div[role="slider"] {
 
 div[data-testid="stSlider"] [data-baseweb="slider"] div[role="slider"]:focus {
     box-shadow: 0 0 0 5px rgba(212, 166, 74, 0.18) !important;
+}
+
+div[data-testid="stSlider"] [data-testid="stSliderThumbValue"],
+div[data-testid="stSlider"] [data-testid="stSliderThumbValue"] * {
+    color: var(--green) !important;
+}
+
+div[data-testid="stSlider"] [data-baseweb="slider"] div[style*="height: 0.25rem"] {
+    filter: hue-rotate(95deg) saturate(0.72) brightness(0.92) !important;
 }
 
 .hero {

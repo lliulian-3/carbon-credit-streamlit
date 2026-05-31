@@ -35,7 +35,12 @@ DISCOUNT_FACTOR = 0.74
 LTV = 0.6
 
 
-st.set_page_config(page_title="碳益评", layout="wide")
+st.set_page_config(
+    page_title="碳益评",
+    page_icon="🌾",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
 
 
 def clean_html(markup: str) -> str:
