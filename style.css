@@ -35,14 +35,12 @@ header[data-testid="stHeader"],
 
 #MainMenu,
 footer,
-button[kind="header"],
 div[data-testid="stToolbar"],
 div[data-testid="stToolbarActions"],
 div[data-testid="stDecoration"],
 div[data-testid="stStatusWidget"],
 div[data-testid="stDeployButton"],
 div[data-testid="stAppDeployButton"],
-div[data-testid="stBaseButton-headerNoPadding"],
 .stDeployButton,
 button[title="Deploy this app"],
 button[aria-label="Deploy this app"],
@@ -81,6 +79,8 @@ iframe[src*="streamlit.app"] {
 
 section[data-testid="stSidebar"],
 div[data-testid="stSidebar"] {
+    display: block !important;
+    visibility: visible !important;
     background:
         radial-gradient(circle at top left, rgba(47, 125, 74, 0.14), transparent 19rem),
         linear-gradient(180deg, #EAF5EC 0%, #F4FAF2 48%, #EEF7EE 100%);
@@ -90,6 +90,8 @@ div[data-testid="stSidebar"] {
 section[data-testid="stSidebar"] > div,
 div[data-testid="stSidebar"] > div,
 div[data-testid="stSidebarContent"] {
+    display: block !important;
+    visibility: visible !important;
     padding-top: 1.4rem;
     background:
         linear-gradient(180deg, rgba(234, 245, 236, 0.88), rgba(248, 252, 247, 0.82));
